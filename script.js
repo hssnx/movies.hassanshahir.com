@@ -3,29 +3,25 @@ const descriptions = {
         1: "Superficial or cliché. Reinforces existing tropes with no original thought.",
         2: "Touches on a known theme but lacks depth or meaningful exploration.",
         3: "Competently explores a familiar theme, providing a solid but not challenging inquiry.",
-        4: "Presents a challenging, novel idea that provokes significant thought.",
-        5: "Paradigm-Shifting. Introduces a concept so powerful it re-contextualizes a part of reality."
+        4: "Paradigm-Shifting. Introduces a concept so powerful it re-contextualizes a part of reality."
     },
     pillar2: {
         1: "Amateurish or distracting. The technical craft undermines the film's intent.",
         2: "Functional but uninspired. The filmmaking is basic and lacks a distinct voice.",
         3: "Professional and competent. The craft serves the story adequately without elevating it.",
-        4: "Artful and impressive. The direction, cinematography, and sound design significantly enhance the experience.",
-        5: "Masterful. Every technical choice is symbiotic with the film's core theme; the form is the content."
+        4: "Masterful. Every technical choice is symbiotic with the film's core theme; the form is the content."
     },
     pillar3: {
         1: "Formulaic and predictable. Follows a standard structure without purpose.",
         2: "A conventional story told in a conventional way, with few surprises.",
         3: "A well-told story using a traditional structure, or a minor twist on a formula.",
-        4: "Noticeably innovative. Uses a non-linear or unconventional structure to enhance its themes.",
-        5: "Radically Inventive. The narrative structure itself is a key part of the film's philosophical argument."
+        4: "Radically Inventive. The narrative structure itself is a key part of the film's philosophical argument."
     },
     pillar4: {
         1: "Emotionally inert and forgettable. Leaves no lasting impression.",
         2: "Mildly engaging in the moment, but the feeling fades almost immediately.",
         3: "Creates a solid emotional response that serves the story well.",
-        4: "Leaves a strong and lasting emotional or psychological residue for days.",
-        5: "Permanently Integrated. The film becomes part of your internal architecture; a new lens for viewing the world."
+        4: "Permanently Integrated. The film becomes part of your internal architecture; a new lens for viewing the world."
     }
 };
 
@@ -55,25 +51,27 @@ function calculateScore() {
     const totalScore = val1 + val2 + val3 + val4;
     let finalRating = "";
 
-    if (val1 === 5 && val4 === 5 && totalScore >= 18) {
-        finalRating = "5+ (Altering)";
-    } else if (totalScore >= 17) {
-        finalRating = "5-Star (Classic)";
+    if (val1 === 4 && val4 === 4 && totalScore >= 14) {
+        finalRating = "Altering (5)";
     } else if (totalScore >= 13) {
-        finalRating = "4-Star (Good)";
+        finalRating = "Good (4)";
     } else if (totalScore >= 9) {
-        finalRating = "3-Star (Average)";
+        finalRating = "Average (3)";
     } else {
-        finalRating = "1-2 Star (Meh)";
+        finalRating = "Maybe (1-2)";
     }
 
-    document.getElementById('result').textContent = totalScore + "/20 - " + finalRating;
+    document.getElementById('result').textContent = totalScore + "/16 - " + finalRating;
     document.getElementById('result').style.display = 'block';
 }
 
-document.getElementById('slider1').addEventListener('input', updateSliderDisplay);
-document.getElementById('slider2').addEventListener('input', updateSliderDisplay);
-document.getElementById('slider3').addEventListener('input', updateSliderDisplay);
-document.getElementById('slider4').addEventListener('input', updateSliderDisplay);
+// Initialize event listeners when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('slider1').addEventListener('input', updateSliderDisplay);
+    document.getElementById('slider2').addEventListener('input', updateSliderDisplay);
+    document.getElementById('slider3').addEventListener('input', updateSliderDisplay);
+    document.getElementById('slider4').addEventListener('input', updateSliderDisplay);
 
-updateSliderDisplay(); 
+    // Initialize display
+    updateSliderDisplay();
+}); 
