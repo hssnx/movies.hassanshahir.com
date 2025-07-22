@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Film Rating Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Film Rating Calculator</h1>
+
+<div class="pillar">
+<div class="pillar-title">1. Intellectual & Philosophical Depth</div>
+<input type="range" id="slider1" min="1" max="5" step="1" value="3">
+<span class="score" id="score1">3</span>
+<div class="desc" id="desc1"></div>
+</div>
+
+<div class="pillar">
+<div class="pillar-title">2. Aesthetic & Technical Execution</div>
+<input type="range" id="slider2" min="1" max="5" step="1" value="3">
+<span class="score" id="score2">3</span>
+<div class="desc" id="desc2"></div>
+</div>
+
+<div class="pillar">
+<div class="pillar-title">3. Narrative & Structural Innovation</div>
+<input type="range" id="slider3" min="1" max="5" step="1" value="3">
+<span class="score" id="score3">3</span>
+<div class="desc" id="desc3"></div>
+</div>
+
+<div class="pillar">
+<div class="pillar-title">4. Emotional Resonance & Psychological Impact</div>
+<input type="range" id="slider4" min="1" max="5" step="1" value="3">
+<span class="score" id="score4">3</span>
+<div class="desc" id="desc4"></div>
+</div>
+
+<button onclick="calculateScore()">Calculate</button>
+
+<div id="result"></div>
+
+<script src="script.js"></script>
+</body>
+</html> 
